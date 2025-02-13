@@ -4,7 +4,7 @@ local hordedeck = {
 	order = 22,
   unlocked = true,
   discovered = true,
-	config = {consumables = {'c_pokehorde_repeatball'}},
+	config = {},
 	-- config = {},
   loc_vars = function(self, info_queue, center)
     return {vars = {}}

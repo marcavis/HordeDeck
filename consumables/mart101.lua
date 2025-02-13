@@ -7,7 +7,7 @@ local repeatball = {
      return {vars = {}}
     end,
     pos = { x = 0, y = 0 },
-    atlas = "hordedeck", --gotta make its own sprite
+    atlas = "hordeitems", --gotta make its own sprite
     cost = 10,
     pokeball = true,
     unlocked = true,

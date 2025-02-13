@@ -17,8 +17,17 @@ return {
                 text = {
                     "Create a random",
                     "{C:attention}Joker{} card from a",
-                    "type you already have.",
+                    "species you already have.",
                     "{C:inactive}(Must have room)"
+                },
+            },
+        },
+        Sleeve = {
+            sleeve_pokehorde_hordesleeve = {
+                name = "Horde Sleeve",
+                text = {
+                    "Start run with a",
+                    "{{C:tarot,T:c_poke_pokeball}Repeatball{} card."
                 },
             },
         }
