@@ -27,7 +27,7 @@ return {
                 name = "Horde Sleeve",
                 text = {
                     "Start run with a",
-                    "{{C:tarot,T:c_poke_pokeball}Repeatball{} card."
+                    "{{C:tarot,T:c_pokehorde_repeatball}Repeatball{} card."
                 },
             },
         }
