@@ -45,7 +45,7 @@ local repeatball = {
     local create_args = {set = "Joker", area = pokearea, key = ''}
 
     for k, v in pairs(G.jokers.cards) do
-        local thiskey = "j_poke_" .. v.ability.name
+        local thiskey = v.config.center_key
       if get_poke_allowed(thiskey) then
         table.insert(poke_keys, thiskey)
       end
