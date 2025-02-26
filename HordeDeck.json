@@ -1,7 +1,7 @@
 {
 	"id": "HordeDeck",
 	"name": "HordeDeck",
-	"author": ["marcavis"],
+	"author": ["marcavis", "Sonfive"],
 	"description": "A mod of the Pokermon mod.",
 	"prefix": "pokehorde",
 	"main_file": "HordeDeck.lua",
