@@ -7,7 +7,7 @@ local repeatball = {
      return {vars = {}}
     end,
     pos = { x = 0, y = 0 },
-    atlas = "hordeitems", --gotta make its own sprite
+    atlas = "hordeitems", --Thank you Sonfive!
     cost = 10,
     pokeball = true,
     unlocked = true,
@@ -24,6 +24,7 @@ local repeatball = {
           play_sound('timpani')
         --   local _card = create_repeated_poke_joker("pokeball")
           local _card = create_repeated_poke_joker("pokeball")
+          _card.sell_cost = 1
           _card:add_to_deck()
           G.jokers:emplace(_card)
           return true end }))
@@ -46,9 +47,7 @@ local repeatball = {
 
     for k, v in pairs(G.jokers.cards) do
         local thiskey = v.config.center_key
-      if get_poke_allowed(thiskey) then
-        table.insert(poke_keys, thiskey)
-      end
+      table.insert(poke_keys, thiskey)
     end
 
     if #poke_keys > 0 then

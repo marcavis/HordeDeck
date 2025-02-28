@@ -5,7 +5,6 @@ local hordedeck = {
   unlocked = true,
   discovered = true,
 	config = {},
-	-- config = {},
   loc_vars = function(self, info_queue, center)
     return {vars = {}}
   end,
