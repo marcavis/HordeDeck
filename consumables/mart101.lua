@@ -46,8 +46,9 @@ local repeatball = {
     local create_args = {set = "Joker", area = pokearea, key = ''}
 
     for k, v in pairs(G.jokers.cards) do
-        local thiskey = v.config.center_key
-      table.insert(poke_keys, thiskey)
+        local thisbase = get_lowest_evo(v)
+        -- local thiskey = v.config.center_key
+      table.insert(poke_keys, thisbase)
     end
 
     if #poke_keys > 0 then
