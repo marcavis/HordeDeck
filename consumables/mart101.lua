@@ -1,7 +1,7 @@
 local repeatball = {
     name = "repeatball",
     key = "repeatball",
-    set = "Item",
+    set = "Spectral",
     loc_vars = function(self, info_queue, center)
     --  info_queue[#info_queue+1] = {set = 'Other', key = 'basic'}
      return {vars = {}}
@@ -10,6 +10,9 @@ local repeatball = {
     atlas = "hordeitems", --Thank you Sonfive!
     cost = 10,
     pokeball = true,
+    hidden=true,
+    soul_set = "Item",
+    soul_rate = .005,
     unlocked = true,
     discovered = true,
     can_use = function(self, card)
