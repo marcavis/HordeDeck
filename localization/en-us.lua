@@ -11,13 +11,13 @@ return {
                 } 
             },
         },
-        Item = {
+        Spectral = {
             c_pokehorde_repeatball = {
                 name = "Repeatball",
                 text = {
-                    "Create a random",
-                    "{C:attention}Joker{} card from a",
-                    "species you already have.",
+                    "Picks a random",
+                    "{C:attention}Joker{} card you have",
+                    "and creates its base form",
                     "{C:inactive}(Must have room)"
                 },
             },

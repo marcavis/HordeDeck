@@ -8,7 +8,7 @@ local repeatball = {
     end,
     pos = { x = 0, y = 0 },
     atlas = "hordeitems", --Thank you Sonfive!
-    cost = 10,
+    cost = 4,
     pokeball = true,
     hidden=true,
     soul_set = "Item",
