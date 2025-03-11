@@ -15,7 +15,7 @@ return {
             c_pokehorde_repeatball = {
                 name = "Repeatball",
                 text = {
-                    "Picks a random",
+                    "Picks a random {C:attention}non-legendary{}",
                     "{C:attention}Joker{} card you have",
                     "and creates its base form",
                     "{C:inactive}(Must have room)"
