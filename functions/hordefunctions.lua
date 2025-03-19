@@ -16,8 +16,8 @@ get_lowest_evo = function(card)
 			end
 		end
 	end
-	-- if pokermon isn't in a family, return false
-	if not found_family then return nil end
+	-- if pokermon isn't in a family, return its own key
+	if not found_family then return card.config.center.key end
 	return get_full_key(found_family[1])
 end
 
@@ -39,9 +39,11 @@ create_repeated_poke_joker = function(pseed, area, poketype)
 
 	for k, v in pairs(G.jokers.cards) do
 		local thisbase = get_lowest_evo(v)
-		-- local thiskey = v.config.center_key
 		if thisbase and G.P_CENTERS[thisbase].rarity ~= 4 then
 			table.insert(poke_keys, thisbase)
+		--if it's a single stage pokemon, it's fine to add
+		elseif v.config.center.rarity ~= 4 and v.config.center.rarity ~= "poke_mega" then
+			table.insert(poke_keys, v.config.center.key)
 		end
 	end
 
@@ -52,7 +54,6 @@ create_repeated_poke_joker = function(pseed, area, poketype)
 	end
 	create_args.key = poke_key
 
-	print(poke_key)
 	return SMODS.create_card(create_args)
 end
 

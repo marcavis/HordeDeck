@@ -3,6 +3,31 @@ version = "1.0.0"
 dump_lua = true
 priority = 10
 
+#Letting the hordedeck give repeated pokemon
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "functions/pokefunctions.lua"]'
+pattern = 'if next(find_joker("Showman")) or next(find_joker("pokedex")) then return false end'
+position = "at"
+payload = 'if next(find_joker("Showman")) or next(find_joker("pokedex")) or G.GAME.selected_back.name == "hordedeck" then return false end'
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "functions/pokefunctions.lua"]'
+pattern = 'if G.jokers and G.jokers.cards and not next(find_joker("Showman")) then'
+position = "at"
+payload = 'if G.jokers and G.jokers.cards and not next(find_joker("Showman")) and G.GAME.selected_back.name ~= "hordedeck" then'
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "functions/pokefunctions.lua"]'
+pattern = 'if next(find_joker("Showman")) or next(find_joker("pokedex")) then'
+position = "at"
+payload = 'if next(find_joker("Showman")) or next(find_joker("pokedex")) or G.GAME.selected_back.name == "hordedeck" then'
+match_indent = true
+
 #Letting the hordedeck give repeated pokemon; smods also changes this line
 [[patches]]
 [patches.pattern]

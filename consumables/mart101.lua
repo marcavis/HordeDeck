@@ -19,7 +19,13 @@ local repeatball = {
         if #G.jokers.cards < G.jokers.config.card_limit or self.area == G.jokers then
             for i, v in ipairs(G.jokers.cards) do
                 local basickey = get_lowest_evo(v)
-                if v and basickey and G.P_CENTERS[basickey].rarity ~= 4 then return true end
+                if v and basickey and G.P_CENTERS[basickey].rarity ~= 4 then
+                    return true
+                elseif v and v.config.center.rarity ~= 4 and v.config.center.rarity ~= "poke_mega" then
+                    --allow single-stage non-legendary pokemon to be copied
+                    return true
+                end
+                
             end
         else
             return false
