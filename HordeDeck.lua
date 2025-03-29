@@ -6,6 +6,13 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
+  key = "feraldeck",
+  path = "feraldeck.png",
+  px = 71,
+  py = 95
+}):register()
+
+SMODS.Atlas({
   key = "hordeitems",
   path = "hordeitems.png",
   px = 71,

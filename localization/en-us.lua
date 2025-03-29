@@ -10,6 +10,14 @@ return {
                     "multiple times."
                 } 
             },
+            b_pokehorde_feraldeck = {
+                name = "(Bugged!) Feral Deck",
+                text = {
+                    "Jokers can't evolve,",
+                    "but start with {C:attention}+3{} {C:pink}Energy{}",
+                    "and have {C:pink}+3{} Energy Limit",
+                }
+            },
         },
         Spectral = {
             c_pokehorde_repeatball = {

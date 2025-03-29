@@ -1,0 +1,28 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 10
+
+#Deck functionality
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "if card.ability.consumeable and not skip_materialize then card:start_materialize() end"
+position = "after"
+payload = '''
+if _type == 'Joker' and G.GAME.modifiers.feraldeck then
+    for i = 1, 2 do energize(card, card.ability.extra.ptype, false, true) end
+    energy_increase(card, card.ability.extra.ptype)
+    card.ability.energy_count = 3 --hardcode this to avoid having to change Pokermon energy functions further
+end
+
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Pokermon "functions/pokefunctions.lua"]'
+pattern = 'if next(find_joker("everstone")) and not allow_level then return false end'
+position = "after"
+payload = 'if G.GAME.modifiers.feraldeck and not allow_level then return false end'
+match_indent = true
